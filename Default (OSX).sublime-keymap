@@ -177,10 +177,9 @@
 		]
 	},
 
+	// Delete All Tests
 	{
-		"keys": [
-			"ctrl+a"
-		],
+		"keys": ["ctrl+a"],
 		"command": "test_manager",
 		"args": {
 			"action": "delete_all_tests"
