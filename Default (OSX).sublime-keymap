@@ -177,6 +177,23 @@
 		]
 	},
 
+	// Delete All Tests
+	{
+		"keys": ["ctrl+a"],
+		"command": "test_manager",
+		"args": {
+			"action": "delete_all_tests"
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			}
+		]
+	} ,
+
 	// Swap Test
 	{
 		"keys": ["ctrl+super+up"],

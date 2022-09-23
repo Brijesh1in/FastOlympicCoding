@@ -1106,6 +1106,18 @@ class TestManagerCommand(sublime_plugin.TextCommand):
 			self.delete_test(edit, test)
 		self.memorize_tests()
 
+	def delete_all_tests(self , edit):
+		sublime.status_message('Cleared all tests')
+		tester = self.tester
+		k = tester.test_iter
+		to_del = []
+		for i in range(k):
+			to_del.append(i)
+
+		for test in reversed(to_del):
+			self.delete_test(edit , test)
+		self.memorize_tests()
+
 	def sync_read_only(self):
 		view = self.view
 		tester = self.tester
@@ -1307,6 +1319,9 @@ class TestManagerCommand(sublime_plugin.TextCommand):
 		
 		elif action == 'delete_tests':
 			self.delete_tests(edit)
+
+		elif action == 'delete_all_tests':
+			self.delete_all_tests(edit)
 
 		elif action == 'accept_test':
 			self.set_tests_status()
